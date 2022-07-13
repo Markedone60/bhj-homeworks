@@ -25,8 +25,6 @@ for (let i = 0; i < menuFinder.length; i++) {
     }
 }
 
-//1. Можно ли сделать через 1ый вариант с наследованием 'menu__item' - 'menu_sub' через clothes?
-
 /* 
 Из лекции с методом forEach
 
