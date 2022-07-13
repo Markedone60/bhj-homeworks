@@ -1,26 +1,26 @@
 'use strict';
 
-const activeIndex = 0;
-const navLeft = document.querySelector('.slider__arrow_prev');
-const navRight = document.querySelector('.slider__arrow_next');
-const slides = Array.from(document.querySelectorAll('.slider__items'));
+let navLeft = document.querySelector('.slider__arrow_prev');
+let navRight = document.querySelector('.slider__arrow_next');
+let arrows = Array.from(document.querySelectorAll('.slider__arrow'))
+let slides = Array.from(document.querySelectorAll('.slider__items'));
+let activeIndex = slides.findIndex((slide) => slide.classList.contains('slider__item_active'))
 
-navRight.onclick = function() {
-    activeIndex = slides.findIndex((value) => {value.classList.contains('slider__item_active')})
-    slides[activeIndex].classList.toggle(slider__item_active);
-    activeIndex = (activeIndex + 1) % slides.length;
-    slides[activeIndex].classList.toggle(slider__item_active);
+for (let i = 0; i < arrows.length; i++) {
+    arrows[i].onclick = function () {
+        slides[activeIndex].classList.remove('slider__item_active');
+        if (arrows[i] === next) {
+            activeIndex++;
+        } else {
+            activeIndex--;
+        }
+        if (activeIndex === slides.length) {
+            activeIndex = 0;
+        }
+        if (activeIndex === -1) {
+            activeIndex = slides.length - 1;
+        }
+        slides[activeIndex].classList.add('slider__item_active');
+    };
 }
-
-navLeft.onclick = function() {
-    activeIndex = slides.findIndex((value) => {value.classList.contains('slider__item_active')})
-    slides[activeIndex].classList.toggle(slider__item_active);
-    if (activeIndex > 0) {
-        activeIndex - 1;
-    } else {
-        slides.length - 1;
-    }
-    slides[activeIndex].classList.toggle(slider__item_active);
-}
-
 
