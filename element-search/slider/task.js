@@ -4,7 +4,7 @@ let navLeft = document.querySelector('.slider__arrow_prev');
 let navRight = document.querySelector('.slider__arrow_next');
 let arrows = Array.from(document.querySelectorAll('.slider__arrow'))
 let slides = Array.from(document.querySelectorAll('.slider__item'));
-let activeIndex = slides.findIndex((slide) => slide.classList.contains('slider__item_active'))
+let activeIndex = slides.findIndex((slide) => slide.classList.contains('slider__item_active'))  //находим активный слайд через индекс
 
 for (let i = 0; i < arrows.length; i++) {
     arrows[i].onclick = function () {

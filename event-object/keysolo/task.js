@@ -17,6 +17,20 @@ class Game {
   }
 
   registerEvents() {
+    document.addEventListener('keyup', (event) => {
+      const currentSymbol = this.currentSymbol.textContent.toLowerCase();
+      const pushedKey = event.key.toLowerCase(); 
+      if (pushedKey === currentSymbol) {
+        this.success();
+      } else {
+        this.fail();
+      }
+    })
+
+    // use text transform;
+    // document.addEventListener.keyUp/keyDown
+    // to select and compare symbols = change letter small on big etc
+    // use success or fail
     /*
       TODO:
       Написать обработчик события, который откликается
@@ -24,6 +38,8 @@ class Game {
       В случае правильного ввода слова вызываем this.success()
       При неправильном вводе символа - this.fail();
      */
+
+    
   }
 
   success() {
