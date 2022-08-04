@@ -6,9 +6,8 @@ const taskList = document.getElementById('tasks__list');
 
 
 function addText (event) {
-  
-  if (input.value != '') {
-    event.preventDefault();
+  event.preventDefault();
+  if (input.value.trim() != '') {
     taskList.insertAdjacentHTML('beforeEnd',`<div class="task">
       <div class="task__title">
         ${input.value}
